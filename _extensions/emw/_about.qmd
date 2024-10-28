@@ -1,0 +1,9 @@
+# About
+
+::: {layout="[0.38, -0.02, 0.60]" layout-valign="center"}
+<img src = "https://emmarshall.github.io/runza/img/avatar.png" class = "picture" />
+
+- [{{< iconify fa6-solid house-chimney-user >}} Website](https://emmarshall.github.io/){style="text-decoration: none;"}
+- [{{< iconify fa6-solid envelope >}} em.marshall47@gmail.com](mailto:em.marshall47@gmail.com){style="text-decoration: none;"}
+- [{{< iconify fa6-brands github >}} \@emmarshall](https://github.com/emmarshall/){style="text-decoration: none;"}
+:::
