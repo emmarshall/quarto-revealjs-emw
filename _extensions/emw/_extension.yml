@@ -9,10 +9,10 @@ contributes:
       highlight-style: github-dark
       theme: emw.scss
       footer: |
-        <a href="https://emmarshall.github.io/">emma.marshall.com</a>
+        <a href="https://emmarshall.github.io/">emmawmarshall.com</a>
         |
         <a href="https://creativecommons.org/licenses/by-sa/4.0/">License: CC-BY-SA-4.0</a>
-      logo: emw.png
+      logo: logo.png
       include-in-header:
         - text: |
             <link rel="shortcut icon" href="https://emmarshall.github.io/runza/img/icons/corn-logo-y.svg" />

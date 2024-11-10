@@ -34,8 +34,8 @@ theme_emw <- function(
     title = NULL,
     aspect.ratio = NULL,
 
-    axis.title = NULL,
-    axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = half_line), vjust = 1),
+    axis.title = ggtext::element_markdown(size = base_size * 1.3, face = "bold", color = "#f1fa8c", hjust = 1),
+    #axis.title.x = ggplot2::element_text(margin = ggplot2::margin(t = half_line), vjust = 1),
     axis.title.x.top = ggplot2::element_text(margin = ggplot2::margin(b = half_line), vjust = 0),
     axis.title.x.bottom = NULL,
     axis.title.y = ggplot2::element_text(angle = 90, margin = ggplot2::margin(r = half_line), vjust = 1),
@@ -48,28 +48,10 @@ theme_emw <- function(
     axis.text.y = ggplot2::element_text(margin = ggplot2::margin(r = 0.8 * half_line / 2), hjust = 1),
     axis.text.y.left = NULL,
     axis.text.y.right = ggplot2::element_text(margin = ggplot2::margin(l = 0.8 * half_line / 2), hjust = 0),
-    axis.ticks = ggplot2::element_line(colour = bc[3]),
-    axis.ticks.x = NULL,
-    axis.ticks.x.top = NULL,
-    axis.ticks.x.bottom = NULL,
-    axis.ticks.y = NULL,
-    axis.ticks.y.left = NULL,
-    axis.ticks.y.right = NULL,
-    axis.ticks.length = ggplot2::unit(half_line / 2, "pt"),
-    axis.ticks.length.x = NULL,
-    axis.ticks.length.x.top = NULL,
-    axis.ticks.length.x.bottom = NULL,
-    axis.ticks.length.y = NULL,
-    axis.ticks.length.y.left = NULL,
-    axis.ticks.length.y.right = NULL,
-    axis.line = ggplot2::element_blank(),
-    axis.line.x = NULL,
-    axis.line.x.top = NULL,
-    axis.line.x.bottom = NULL,
-    axis.line.y = NULL,
-    axis.line.y.left = NULL,
-    axis.line.y.right = NULL,
-
+    axis.ticks = ggplot2::element_blank(),
+    axis.line = ggplot2::element_line(colour = bc[3]),
+    axis.line.x = ggplot2::element_line(colour = bc[3], size = 1.2), # Specific x-axis setting
+    axis.line.y = ggplot2::element_blank(), # Hide y-axis line
     legend.background = ggplot2::element_rect(fill = bc[1], colour = NA),
     legend.margin = ggplot2::margin(half_line, half_line, half_line, half_line),
     legend.spacing = ggplot2::unit(2 * half_line, "pt"),
@@ -93,7 +75,7 @@ theme_emw <- function(
     legend.box.spacing = ggplot2::unit(2 * half_line, "pt"),
 
     panel.background = ggplot2::element_rect(fill = bc[1], colour = NA),
-    panel.border = ggplot2::element_rect(fill = NA, colour = bc[3], size = 0.5, linetype = "solid"),
+    panel.border = ggplot2::element_blank(),
     panel.spacing = ggplot2::unit(half_line, "pt"),
     panel.spacing.x = NULL,
     panel.spacing.y = NULL,
@@ -154,7 +136,7 @@ theme_emw <- function(
   )
 }
 
-ggplot2::theme_set(theme_emw(base_size = 18, base_family = "Jost"))
+ggplot2::theme_set(theme_emw(base_size = 18, base_family = "Gagalin"))
 
 if (nzchar(system.file(package = "ggtext"))) {
   ggplot2::theme_update(

@@ -4,14 +4,17 @@
 // @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
 // @import url(https://use.fontawesome.com/releases/v6.1.1/css/all.css);
 
+@import 'fonts.css';
+
 // fonts
-$font-family-sans-serif: 'IBM Plex Sans', 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', sans-serif !default;
+$font-family-sans-serif: 'IBM Plex Sans', sans-serif !default;
+$presentation-heading-font: 'Gagalin' !default;	
 
 // colors
 //based on https://draculatheme.com/
 
 $background: #282a36;
-$foreground: #f8f8f2;
+$foreground: #FFFAF0;
 $selection: #44475a;
 $comment: #6272a4;
 $red: #ff5555;
@@ -27,11 +30,11 @@ $body-color: $foreground !default;
 $presentation-heading-color: $red !default;
 $presentation-heading-text-shadow: none !default;
 $presentation-heading-text-transform: none !default;
+$presentation-heading-letter-spacing: 0.05em;
 $body-bg: $background !default;
 $link-color: $yellow !default;
 $link-color-hover: $cyan !default;
 $selection-bg: $selection !default;
-$code-color: $red !default;
 $presentation-list-bullet-color: $red !default;
 
 // Change text colors against light slide backgrounds
@@ -41,16 +44,15 @@ $body-bg: $dark !default;
 $body-color: $light !default;
 $link-color: $red !default;
 
-$code-bg: $body-color !default;
 
-$code-block-bg: $body-color !default;
-$code-block-border-color: $body-color !default;
+$code-block-bg: lighten($background, 20%) !default;
+$code-block-border-color: $yellow !default;
 
 /*-- scss:rules --*/
 // Define additional color effects based on Dracula spec
 // https://spec.draculatheme.com/
 :root {
-  --r-bold-color: #{$orange};
+  --r-bold-color: #{$red};
   --r-italic-color: #{$yellow};
   --r-inline-code-color: #{$code-color};
   --r-list-bullet-color: #{$presentation-list-bullet-color};
@@ -67,8 +69,8 @@ $code-block-border-color: $body-color !default;
     color: var(--r-italic-color);
   }
   code {
-    color: var(--r-inline-code-color);
-    background-color: darken($foreground, 2%);
+    color: $background;
+    background-color: $yellow;
   }
   // Dracula colored list bullets and numbers
   ul,
@@ -90,6 +92,7 @@ html * {
 .h2 {
   color: $primary, !important;
 }
+
 
 .picture {
   border-style: solid;
@@ -174,13 +177,14 @@ html * {
   color: $body-color !important;
 }
 
-.cell-output {
-  border: 1px solid $body-color;
-  border-radius: 4px;
-}
+
+
+// code blocks
+
+
 
 code.sourceCode>span {
-  color: $body-bg !important;
+  color: $yellow !important;
 }
 
 .center-x {
@@ -197,8 +201,8 @@ code.sourceCode>span {
 }
 
 div.sourceCode pre code > span, code span.bu, code span.dt, code span.va, code span.cn, code span.op { 
-  color: #ffffff;
-  
+  color: #FFFAF0;
+
 }
 
 code span.er {
@@ -214,7 +218,7 @@ code span.do, code span.co  {
 }
 
 code span.fu, code span.cf, code span.im, code span.kw, code span.pp  {
-  color:  $red;
+  color:  $orange;
 }
 
 code span.at, code span.in {
@@ -227,5 +231,46 @@ code span.fl, code span.dv {
 
 
 code span.sc,  code span.ot{
-  color:  $yellow;
+  color:  $red;
+}
+
+
+
+// Background color sections
+
+.example {
+  &:is(.slide-background) {
+  background: $yellow;
+  }
+}
+
+.exercise {
+  &:is(.slide-background) {
+  background: $red;
+  }
+}
+
+
+// Fontawesome
+
+.fab, .fa-brands {
+  font-family: 'Font Awesome 6 Brands';
+  font-weight: 400;
+  color: var(--r-bold-color);
+  line-height: 1.5;
+}
+
+.fas, .fa-solid {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: var(--r-bold-color);
+  line-height: 1.2;
+}
+
+// Slide iframes
+
+.slides {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
 }

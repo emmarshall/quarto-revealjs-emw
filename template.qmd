@@ -4,14 +4,15 @@ subtitle: "A Subtitle"
 author: "Emma Marshall, *J.D.*, *Ph.D.*"
 institute: "University of Nebraska-Lincoln"
 date: today
-date-format: "dddd, [the] D[<sup style='font-size:65%;font-style:italic;'>th</sup>] [of] MMMM, YYYY"
+date-format: "MMMM DD, YYYY"
 embed-resources: false
 format: emw-revealjs
 ---
 
 ```{r}
 #| include: false
-sysfonts::font_add_google("Alegreya Sans", "Alegreya Sans", regular.wt = 300)
+sysfonts::font_add_google("IBM Plex Sans", "IBM Plex Sans", regular.wt = 300)
+sysfonts::font_add("Gagalin", regular = "fonts/Gagalin-Regular.otf")
 showtext::showtext_auto()
 source("_extensions/emw/setup-ggplot2-emw.R")
 ```
